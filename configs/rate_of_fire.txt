@@ -1,0 +1,20 @@
+"weapons"
+{
+	// Check Default Weapon Fire Rate in https://docs.google.com/spreadsheets/d/11tDzUNBq9zIX6_9Rel__fdAUezAQzSnh5AVYzCP060c/htmlview
+	"weapon_m4a1_silencer"
+	{
+		"default_rate"	"600.0"
+		"rate_of_fire"	"700.0"
+	}
+
+	"weapon_m4a1"
+	{
+		"default_rate"	"666.0"
+		"rate_of_fire"	"700.0"
+	}
+	"weapon_nova"
+	{
+		"default_rate"	"68.16"
+		"rate_of_fire"	"80.0"
+	}
+}
