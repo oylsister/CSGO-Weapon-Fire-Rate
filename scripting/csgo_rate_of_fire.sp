@@ -14,7 +14,7 @@ public Plugin myinfo =
 	name = "[CSGO] Change Weapon Fire Rate",
 	author = "Oylsister, Special Thanks to inklesspen",
 	version = "1.0",
-	url = "https://github.com/oylsister/CSGO-Weapon-Fire-Rate"
+	url = "https://github.com/oylsister/CSGO-Weapon-Fire-Rate, https://forums.alliedmods.net/showthread.php?t=299481"
 };
 
 public void OnPluginStart()
