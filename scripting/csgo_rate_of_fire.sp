@@ -7,7 +7,10 @@
 
 ArrayList ArrayWeapon;
 
+ConVar g_Cvar_Enable;
+
 bool bLoaded = false;
+bool bEnabled;
 
 public Plugin myinfo =
 {
@@ -20,11 +23,22 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
     HookEvent("weapon_fire", WeaponFire);
+
+    g_Cvar_Enable = CreateConVar("sm_custom_firerate_enable", "1.0", "Enable this plugin or not", _, true, 0.0, true , 1.0);
+
+    HookConVarChange(g_Cvar_Enable, OnEnableChanged);
+}
+
+public void OnEnableChanged(ConVar convar, const char[] oldValue, const char[] newValue)
+{
+    bEnabled = g_Cvar_Enable.BoolValue;
 }
 
 public void OnMapStart()
 {
     LoadConfig();
+
+    bEnabled = g_Cvar_Enable.BoolValue;
 }
 
 void LoadConfig()
@@ -73,7 +87,7 @@ void LoadConfig()
 
 public void WeaponFire(Event event, char[] name, bool dbc)
 {
-    if(bLoaded)
+    if(bLoaded && bEnabled)
         RequestFrame(FirePostFrame, event.GetInt("userid"));
 }
 
